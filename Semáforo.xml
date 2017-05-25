@@ -1,0 +1,107 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="io_digitalwrite" id="MpBEuvw*T?b;E(Rk2,b^" x="96" y="78">
+    <field name="PIN">11</field>
+    <value name="STATE">
+      <block type="io_highlow" id="i1*_Wdap6AbZ/a(7-).8">
+        <field name="STATE">HIGH</field>
+      </block>
+    </value>
+    <next>
+      <block type="io_digitalwrite" id="E?b*/{1G*cS~@KQRLiz{">
+        <field name="PIN">10</field>
+        <value name="STATE">
+          <block type="io_highlow" id="]cc2%2AoU)y9~`Weq:6K">
+            <field name="STATE">HIGH</field>
+          </block>
+        </value>
+        <next>
+          <block type="time_delay" id="E}WBdsWLmgj2-orEQ?~f">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id="*)1A-qWku0^^vEB8Q;y,">
+                <field name="NUM">7000</field>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id="%%Xb|M^Q5?~T;XGb1TrF">
+                <field name="PIN">11</field>
+                <value name="STATE">
+                  <block type="io_highlow" id="fC)x,N5A/Xa/Pxs:Nu@G">
+                    <field name="STATE">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="io_digitalwrite" id=":x[3onn`(60rqy2lBsqo">
+                    <field name="PIN">12</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id="5#axz8N=tW;9h[15cS!w">
+                        <field name="STATE">HIGH</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="time_delay" id="3cqnrze@OH*trD1n:ZWd">
+                        <value name="DELAY_TIME_MILI">
+                          <block type="math_number" id="GOGR8!qAx,?x*(=,cz|q">
+                            <field name="NUM">3000</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="io_digitalwrite" id="B6_nBx{).`-#dHhCpQ/?">
+                            <field name="PIN">12</field>
+                            <value name="STATE">
+                              <block type="io_highlow" id="#~lF5[KNKj-7TU2u67i,">
+                                <field name="STATE">LOW</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="io_digitalwrite" id=";b5*W1KMYfxuTy!#5|q9">
+                                <field name="PIN">10</field>
+                                <value name="STATE">
+                                  <block type="io_highlow" id="q{Fce!E;cjV@GTK5uN%-">
+                                    <field name="STATE">LOW</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="io_digitalwrite" id="_F6DpvVav|To200n;aq(">
+                                    <field name="PIN">13</field>
+                                    <value name="STATE">
+                                      <block type="io_highlow" id="DLet)/;_KI/oPW419^yz">
+                                        <field name="STATE">HIGH</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="time_delay" id="Hsd)~(9wsd75u}/w{MDb">
+                                        <value name="DELAY_TIME_MILI">
+                                          <block type="math_number" id="vqieL#}pdHsXi;@mpf7?">
+                                            <field name="NUM">5000</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="io_digitalwrite" id="qKY4R(HfQOwroHR2a]O*">
+                                            <field name="PIN">13</field>
+                                            <value name="STATE">
+                                              <block type="io_highlow" id="uOK72e5g?7aK@sU.lluP">
+                                                <field name="STATE">LOW</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

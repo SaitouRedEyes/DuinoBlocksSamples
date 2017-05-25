@@ -1,0 +1,49 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="ixt46{IM_vhKrL?7wf1+" x="-38" y="13">
+    <field name="VAR">estadoBotao</field>
+    <value name="VALUE">
+      <block type="io_digitalread" id="7WXP5UUQ36`;Ym(v`8b=">
+        <field name="PIN">2</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_if_else2" id="10Cs4x+UCy|H8yfo}21k">
+        <value name="if_label">
+          <block type="logic_compare" id="x],Yo`7X!Rxt,:8Do|3?">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="F5Cr/ub=6VLN/BO-ci},">
+                <field name="VAR">estadoBotao</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="{q00ZV5THYkH~nj-tU=e">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="if">
+          <block type="io_digitalwrite" id="oAf,Ji0(0V[tzW7@A-#e">
+            <field name="PIN">13</field>
+            <value name="STATE">
+              <block type="io_highlow" id="8Sb_lT(.yPFvJ[obz1dR">
+                <field name="STATE">HIGH</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="else">
+          <block type="io_digitalwrite" id="cMY^*UT(`|;Mcu96Er+6">
+            <field name="PIN">13</field>
+            <value name="STATE">
+              <block type="io_highlow" id="(b[u,1{FQ:qY[3v80c5?">
+                <field name="STATE">LOW</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,217 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_if" id="XvN~IFJvXqhO4S-t}W@h" x="82" y="22">
+    <value name="IF0">
+      <block type="logic_compare" id="kHQIr%ghy1=,HyEtZ4%w">
+        <field name="OP">EQ</field>
+        <value name="A">
+          <block type="variables_get" id="Pr[B8b%2^;W~QYD!t:?g">
+            <field name="VAR">cor</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="text" id="d(`d)v4oRso4F?82K|O^">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="variables_set" id="{y}ltT8ivpKsJ^FYh50{">
+        <field name="VAR">cor</field>
+        <value name="VALUE">
+          <block type="text" id="v?.d/ooU|e3/G6dJ/f%2">
+            <field name="TEXT">vermelho</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="controls_if" id=";n0GA)!/_*CdA/1+Z^@%" x="106" y="141">
+    <value name="IF0">
+      <block type="logic_compare" id="@20F3-b2o#=3`{{9vJDK">
+        <field name="OP">EQ</field>
+        <value name="A">
+          <block type="variables_get" id="sYAwV?+3Zq*1d|za]1)F">
+            <field name="VAR">cor</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="text" id="wZuc.CHhOh-_}osgtmOR">
+            <field name="TEXT">verde</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="io_digitalwrite" id="/mF3x5D/wiK#z2Xm}+)/">
+        <field name="PIN">11</field>
+        <value name="STATE">
+          <block type="io_highlow" id="9JpsE2yxPD5%SZPoMEw{">
+            <field name="STATE">HIGH</field>
+          </block>
+        </value>
+        <next>
+          <block type="io_digitalwrite" id="QtRffC`Q)tO=x?#aJrk*">
+            <field name="PIN">10</field>
+            <value name="STATE">
+              <block type="io_highlow" id="P6pG_t1FJ:Cf?ZDP~^^N">
+                <field name="STATE">HIGH</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_delay" id="*PP@sxthr?yKb`3r.at:">
+                <value name="DELAY_TIME_MILI">
+                  <block type="math_number" id="Kpv:Kq!1XPQ@C-MV,Ty5">
+                    <field name="NUM">5000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="io_digitalwrite" id="M!W|?m5JxB8l*Sr*~*q[">
+                    <field name="PIN">11</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id="fCJCUSSSOO]anb_j(CKq">
+                        <field name="STATE">LOW</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="t~,gnzC,f5~#:mVFM=:`">
+                        <field name="VAR">cor</field>
+                        <value name="VALUE">
+                          <block type="text" id="g|]O1|fosu|lc(L-(:#Q">
+                            <field name="TEXT">amarelo</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="controls_if" id="!}MUyYR3ylh1{0o~c#Sl" x="126" y="408">
+    <value name="IF0">
+      <block type="logic_compare" id="r!V[jjl=W9u}^%6ja!F5">
+        <field name="OP">EQ</field>
+        <value name="A">
+          <block type="variables_get" id="K0,qfRYo-MM]I|C@`jzb">
+            <field name="VAR">cor</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="text" id="*@1v#S+.u-:`RU{[|J%7">
+            <field name="TEXT">vermelho</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="io_digitalwrite" id="Sm2~tjSuBUO+Hc)89Hkb">
+        <field name="PIN">13</field>
+        <value name="STATE">
+          <block type="io_highlow" id="y86BGy!~C9SF,D+a(YZZ">
+            <field name="STATE">HIGH</field>
+          </block>
+        </value>
+        <next>
+          <block type="time_delay" id="_)m}%qwniGix?rdEUxsu">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id="pM*~u;0h=59.]zI9/*YF">
+                <field name="NUM">3000</field>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id="jZ%pzI^p0NZ0Ezzq:o93">
+                <field name="PIN">13</field>
+                <value name="STATE">
+                  <block type="io_highlow" id="8VGQF(wBf0#^TF7`Z+5^">
+                    <field name="STATE">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="m,lj}0aA5%vO([(JNC@G">
+                    <field name="VAR">cor</field>
+                    <value name="VALUE">
+                      <block type="text" id="OG_A]..)t(oJg=:mAUyp">
+                        <field name="TEXT">verde</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="controls_if" id="!(wuvZ.ta[A#}*!i9Qs`" x="146" y="638">
+    <value name="IF0">
+      <block type="logic_compare" id="mp7Nkvr/*l{4NQ1vGc^p">
+        <field name="OP">EQ</field>
+        <value name="A">
+          <block type="variables_get" id="*33s5b2fZxD[gO*-4AN7">
+            <field name="VAR">cor</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="text" id="J%=/x9O^-FzBZGmjJ{Xk">
+            <field name="TEXT">amarelo</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="io_digitalwrite" id="hpdOYp/]w2huw):Tv_Hs">
+        <field name="PIN">12</field>
+        <value name="STATE">
+          <block type="io_highlow" id="X[]CGxq]h_{_1UELEV3o">
+            <field name="STATE">HIGH</field>
+          </block>
+        </value>
+        <next>
+          <block type="time_delay" id="TZ4d2E5#yk,!c2ri{LB4">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id="5C?KL{K)Y|5OYoLp75zi">
+                <field name="NUM">2000</field>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id="~Ab//G~Vmtm:Rf!()GA9">
+                <field name="PIN">12</field>
+                <value name="STATE">
+                  <block type="io_highlow" id="?R/Av|{h|ayh)kq=|%^s">
+                    <field name="STATE">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="io_digitalwrite" id="(amTPoTCo!%DP{^AoiC5">
+                    <field name="PIN">10</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id="oi8.!RY/`c*yDzC{PBw%">
+                        <field name="STATE">LOW</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="U?2L2}.}1(MTB%0[)Wg;">
+                        <field name="VAR">cor</field>
+                        <value name="VALUE">
+                          <block type="text" id="b_QciS/@Sqmut7;q+Q(H">
+                            <field name="TEXT">vermelho</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

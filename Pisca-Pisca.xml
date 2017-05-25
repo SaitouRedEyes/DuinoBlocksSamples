@@ -1,0 +1,76 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="io_digitalwrite" id=".KHsu=02NPKIjq6Og*4t" x="110" y="37">
+    <field name="PIN">13</field>
+    <value name="STATE">
+      <block type="io_highlow" id="-)KIU3H8uAnICc?oYDTa">
+        <field name="STATE">HIGH</field>
+      </block>
+    </value>
+    <next>
+      <block type="time_delay" id="Uo{1x.P}}hM^pbISK!Vn">
+        <value name="DELAY_TIME_MILI">
+          <block type="math_number" id="emH?lE@vV/-09kdlJ1_W">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+        <next>
+          <block type="io_digitalwrite" id="LTYABrD6SoiiS^#M#kc3">
+            <field name="PIN">13</field>
+            <value name="STATE">
+              <block type="io_highlow" id="@0}}8hkaMumyAOtI);?H">
+                <field name="STATE">LOW</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_delay" id="8=he2fq8;O58q?~+JrX@">
+                <value name="DELAY_TIME_MILI">
+                  <block type="math_number" id="l1A^8_)/.Yuimx5cm3Zn">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="io_digitalwrite" id="2aSTI,Vz3dlJ=Ldi/|Dd">
+                    <field name="PIN">12</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id="0P*ko}NDxfI32`kacmA3">
+                        <field name="STATE">HIGH</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="time_delay" id="jPZ.H|[2Okn)%K0wPpmh">
+                        <value name="DELAY_TIME_MILI">
+                          <block type="math_number" id="3yHW.(z]_HK(gXHVLsPO">
+                            <field name="NUM">500</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="io_digitalwrite" id=",||e|Zf8f3-o|KisfUQw">
+                            <field name="PIN">12</field>
+                            <value name="STATE">
+                              <block type="io_highlow" id="frV*h_JcJn*(zQGk.b_3">
+                                <field name="STATE">LOW</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="time_delay" id="uw1~F[VlywDV#.y21|Ts">
+                                <value name="DELAY_TIME_MILI">
+                                  <block type="math_number" id="ZOZz=;;et;lsNjHV?Xm+">
+                                    <field name="NUM">500</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
