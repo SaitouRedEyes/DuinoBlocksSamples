@@ -1,0 +1,253 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_if" id="}Nm{vsl2ayWHdbd-|G%e" x="61" y="-62">
+    <value name="IF0">
+      <block type="logic_compare" id="@%0]ZQ.Em6=95!%[ecAT">
+        <field name="OP">EQ</field>
+        <value name="A">
+          <block type="variables_get" id="Gl99dN5zk^W2=XmZ?c7b">
+            <field name="VAR">qualLED</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="rvwN-Q.[jn0uzQi/+9;-">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="variables_set" id="u4jkG{c:UiB2)z,=O4E*">
+        <field name="VAR">qualLED</field>
+        <value name="VALUE">
+          <block type="math_number" id="{DKuPr-N*:EMS%XZX8]Y">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="variables_set" id=";Rvow)nLTe/L([Uy8]fj">
+        <field name="VAR">estadoBotao</field>
+        <value name="VALUE">
+          <block type="io_digitalread" id="}*aLE)#UcGkq[k}l2J?J">
+            <field name="PIN">2</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if_else2" id="Xm!W~7faEv,Wrrd#5Ejr">
+            <value name="if_label">
+              <block type="logic_compare" id="#6~Q.(z1JT*XCsIIGv:*">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="`1ouX05b+7GjWYEqm5P}">
+                    <field name="VAR">estadoBotao</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="5J:FiggxR4@H.~nf+r@X">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="if">
+              <block type="variables_set" id="pii44~YYsA+R}Do_xMcQ">
+                <field name="VAR">imedSolto</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="/N8bW9{uP*Ox8:4C|!fV">
+                    <field name="BOOL">FALSE</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="3wBw6jR|!=e^;wcGpBv(">
+                    <value name="IF0">
+                      <block type="logic_compare" id="x#Rtc[KvG9s@E`o6l=0C">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="{kf+%OQ/JuTl?yva,,_B">
+                            <field name="VAR">qualLED</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="%,Vb{mbq|f,bcaQLRDqD">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="io_digitalwrite" id="%CnjGS[ZGgGgEuUo1V}.">
+                        <field name="PIN">13</field>
+                        <value name="STATE">
+                          <block type="io_highlow" id="Vy58B0LgH,9UeDL-Z[62">
+                            <field name="STATE">HIGH</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id=",3;]1xKbY@j66+bK.niR">
+                        <value name="IF0">
+                          <block type="logic_compare" id="xfV]vC`XE(W=wuK`Hdf`">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id=";/}+[iz@Dz^uuUT,61ns">
+                                <field name="VAR">qualLED</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="ZTtS`?MtodhQNP#]z-/X">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="io_digitalwrite" id="zBo)7%?wDk%}{bcXR7~u">
+                            <field name="PIN">12</field>
+                            <value name="STATE">
+                              <block type="io_highlow" id="kH=kI#Kh50Z|aPhr3Ldr">
+                                <field name="STATE">HIGH</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="(OWXWGK}|#:*!2!-FI^`">
+                            <value name="IF0">
+                              <block type="logic_compare" id="%FeN{[h.)n(C1,y_@itX">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="FdW@3Hsg=_1hs0sqcnZh">
+                                    <field name="VAR">qualLED</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="WANglB870OFC8p9!={=.">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="io_digitalwrite" id="4IV-8OHWxr~c%MhKd}D,">
+                                <field name="PIN">11</field>
+                                <value name="STATE">
+                                  <block type="io_highlow" id="UK%VM)a/he?uT=xoo/8i">
+                                    <field name="STATE">HIGH</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="else">
+              <block type="controls_if" id="jQInFDhXE-:99.r-~1MO">
+                <value name="IF0">
+                  <block type="logic_compare" id="/%]l2N!z`%+vOis}QGFW">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="AL#d0N`7%hiUpG/3BW{I">
+                        <field name="VAR">imedSolto</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_boolean" id=",I6+-(lF@XR{?9)v;;o*">
+                        <field name="BOOL">FALSE</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="variables_set" id="YrU1=q?Is(V;vd4zZi0N">
+                    <field name="VAR">imedSolto</field>
+                    <value name="VALUE">
+                      <block type="logic_boolean" id="]qdM7eAd`19n)%@-IPUj">
+                        <field name="BOOL">TRUE</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_increment" id="[uz./2`w^awhNC6{^!7z">
+                        <field name="increment">qualLED</field>
+                        <value name="INCREMENT_VALUE">
+                          <block type="math_number" id="Co*mpHGm3({h0;^FwhHW">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="7gatw4%FKik6{-fG~B_t">
+                            <value name="IF0">
+                              <block type="logic_compare" id="uZ]AO6.cWp[4,R%*eAb,">
+                                <field name="OP">GTE</field>
+                                <value name="A">
+                                  <block type="variables_get" id="BT{QZVYEVf7}k)mMMmje">
+                                    <field name="VAR">qualLED</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="OQ|-4*I,k65Z{O)p1M?F">
+                                    <field name="NUM">4</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="variables_set" id="Q;lrXN:7EQ|y%A)-VlW1">
+                                <field name="VAR">qualLED</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="b%j*-#6t]_zF4,_`%bJ}">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="io_digitalwrite" id="BZUn3|g-67|w,4w/uehX">
+                    <field name="PIN">13</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id="#72p?EsY7bHh-XNArQYL">
+                        <field name="STATE">LOW</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="io_digitalwrite" id="FS_*aZKQBOo.Cifa~O:0">
+                        <field name="PIN">12</field>
+                        <value name="STATE">
+                          <block type="io_highlow" id=";V[ao/tA{t*J4PT(MaO4">
+                            <field name="STATE">LOW</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="io_digitalwrite" id="z@/Av7nape?CHM(FhU0U">
+                            <field name="PIN">11</field>
+                            <value name="STATE">
+                              <block type="io_highlow" id="nhf6#/):ri^(}}TP@U}s">
+                                <field name="STATE">LOW</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
