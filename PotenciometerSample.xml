@@ -1,0 +1,39 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="s2V0Mwf-#4=MNdb4a;H(" x="79" y="38">
+    <field name="VAR">valorPot</field>
+    <value name="VALUE">
+      <block type="io_analogread" id="_^q1Z9;oD2We##}CbA{r">
+        <field name="PIN">A0</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="BG*~D%8A:2mbWh/wDBn#">
+        <field name="VAR">valorPWM</field>
+        <value name="VALUE">
+          <block type="base_map" id="nfasU:mc0#aX:qOxR{6`">
+            <value name="NUM">
+              <block type="variables_get" id="ljh(^KcfhRe,V*VP+30h">
+                <field name="VAR">valorPot</field>
+              </block>
+            </value>
+            <value name="DMAX">
+              <block type="math_number" id="b*[C/s?teC3JG7cNLpGE">
+                <field name="NUM">255</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="io_analogwrite" id="FwzAaW(-,qBb:zqBbiPi">
+            <field name="PIN">3</field>
+            <value name="WRITE_VALUE">
+              <block type="variables_get" id="i![PS%tIy3m-e~h0-q6I">
+                <field name="VAR">valorPWM</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

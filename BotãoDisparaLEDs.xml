@@ -1,0 +1,156 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="03M:VwMqX=FE={kK`Y^b" x="48" y="31">
+    <field name="VAR">estadoBotao</field>
+    <value name="VALUE">
+      <block type="io_digitalread" id=")hU`UpET@M[J_Z;EqL}`">
+        <field name="PIN">2</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_if_else2" id="0Gv~Z!(*mWl7|#L[g^4-">
+        <value name="if_label">
+          <block type="logic_compare" id=",[*ncWL,Rvjp-N),?MdY">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="qpAa(,X1m+j?TzLz[)zF">
+                <field name="VAR">estadoBotao</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="Uxp;D2w3h]B#X~78_B)M">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="if">
+          <block type="io_digitalwrite" id="!VD+AR{RW^O.2TJmG,A@">
+            <field name="PIN">13</field>
+            <value name="STATE">
+              <block type="io_highlow" id="o3%!2]/41D2K0q~5n1U(">
+                <field name="STATE">HIGH</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_delay" id="fipFpY+v.R{~H2oSxN0)">
+                <value name="DELAY_TIME_MILI">
+                  <block type="math_number" id="skSQ3CenWOZ9H/0DYS_B">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="io_digitalwrite" id="Vnb-Eit;H-aRKiEwXe}8">
+                    <field name="PIN">13</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id=")lMHDr.Bws5s~chE#M]A">
+                        <field name="STATE">LOW</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="%v-Rbt}IlNJY67^F[Q|e">
+                        <field name="VAR">estadoBotao</field>
+                        <value name="VALUE">
+                          <block type="io_digitalread" id="4is|Yb;J}y%tpecu,3pR">
+                            <field name="PIN">2</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_if_else2" id="qG;|C]N*aPT8lK:!U)Lo">
+                            <value name="if_label">
+                              <block type="logic_compare" id="|UIu2I5`Cp=YyWD_Zb0,">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="v|X.QP/n2=N:!0+Zzr.Q">
+                                    <field name="VAR">estadoBotao</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="`.H_q-@Ow~|dPJ`HS]sz">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="if">
+                              <block type="io_digitalwrite" id="-lN;[`qr)T[.|sl]#2V_">
+                                <field name="PIN">12</field>
+                                <value name="STATE">
+                                  <block type="io_highlow" id="g#2jL.)U3Rz-).[*ln7]">
+                                    <field name="STATE">HIGH</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="time_delay" id="7RQ_J/PYhCJTBQAqg}6~">
+                                    <value name="DELAY_TIME_MILI">
+                                      <block type="math_number" id="@V/UY9:.I(|+|qI?WNUd">
+                                        <field name="NUM">1000</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="io_digitalwrite" id="wiM1IF|*VPF~E{|U!]#L">
+                                        <field name="PIN">12</field>
+                                        <value name="STATE">
+                                          <block type="io_highlow" id="T|zDQabD6C_nF[u~US__">
+                                            <field name="STATE">LOW</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <statement name="else">
+                              <block type="io_digitalwrite" id=",Q0*317,(%p(_`Lo;,5s">
+                                <field name="PIN">13</field>
+                                <value name="STATE">
+                                  <block type="io_highlow" id="R!5tL5_rI.%HAOW0X7;6">
+                                    <field name="STATE">LOW</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="io_digitalwrite" id="Tgg:0Qxho**P.qOsz(z_">
+                                    <field name="PIN">12</field>
+                                    <value name="STATE">
+                                      <block type="io_highlow" id="b2-6^I5akKd)F|b.^2Dz">
+                                        <field name="STATE">LOW</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <statement name="else">
+          <block type="io_digitalwrite" id="gFPD~+JI)`Naw0|yWZtP">
+            <field name="PIN">13</field>
+            <value name="STATE">
+              <block type="io_highlow" id="D`c27.El6FAug6G=V,{D">
+                <field name="STATE">LOW</field>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id="_L#2@:1Z/HEi@Gb8+fkt">
+                <field name="PIN">12</field>
+                <value name="STATE">
+                  <block type="io_highlow" id="oCw*^SLKfZq}+F=D7b33">
+                    <field name="STATE">LOW</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

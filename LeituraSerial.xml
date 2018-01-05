@@ -1,0 +1,49 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="GqfYEFy|#s#mNp~.a+!c" x="77" y="56">
+    <field name="VAR">valorPot</field>
+    <value name="VALUE">
+      <block type="io_analogread" id="v8Y}/0h5NQxJO~.2L0K|">
+        <field name="PIN">A0</field>
+      </block>
+    </value>
+    <next>
+      <block type="serial_print" id="O49V23K1G@2pxeAnip.i">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="NEW_LINE">TRUE</field>
+        <value name="CONTENT">
+          <block type="base_map" id="Rlql(YzYyr/#?|*}UEz:">
+            <value name="NUM">
+              <block type="variables_get" id="_962J_;+LO^4f!zT|b*L">
+                <field name="VAR">valorPot</field>
+              </block>
+            </value>
+            <value name="DMAX">
+              <block type="math_number" id="_X9*9g#A5VNb48a|_Ij*">
+                <field name="NUM">255</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="io_analogwrite" id="#pd}kS6yY6^H/ob?U0i^">
+            <field name="PIN">3</field>
+            <value name="WRITE_VALUE">
+              <block type="base_map" id="si3y%?g8+-FaBYRXHoJQ">
+                <value name="NUM">
+                  <block type="variables_get" id="a--t^ZOc;mQ`~R+x23iu">
+                    <field name="VAR">valorPot</field>
+                  </block>
+                </value>
+                <value name="DMAX">
+                  <block type="math_number" id="0Z=paQi}tSda6B1[]~FB">
+                    <field name="NUM">255</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

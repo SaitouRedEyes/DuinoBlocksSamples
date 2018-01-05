@@ -1,0 +1,48 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="_BAW!.NZ2%l^?``}|+:`" x="54" y="48">
+    <field name="VAR">valorPot</field>
+    <value name="VALUE">
+      <block type="io_analogread" id="6Ybpjg%R8c334*mG%JE[">
+        <field name="PIN">A0</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="I9dTi;g;l#MKoW`Ordu[">
+        <field name="VAR">angulo</field>
+        <value name="VALUE">
+          <block type="base_map" id="`2]3S0.iVS]QoooI@YWV">
+            <value name="NUM">
+              <block type="variables_get" id="WMH*2aEXa%t-CLUxt2oh">
+                <field name="VAR">valorPot</field>
+              </block>
+            </value>
+            <value name="DMAX">
+              <block type="math_number" id=":D5B8seXjTPf66.BVCJr">
+                <field name="NUM">180</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="servo_write" id="gGiI#q(_SxW|7zzO~mXz">
+            <field name="SERVO_PIN">3</field>
+            <value name="SERVO_ANGLE">
+              <block type="variables_get" id="fc)~O9_7ul4XZtOb,b*W">
+                <field name="VAR">angulo</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_delay" id="Jr^1Y^C1|_6n}iu`vw7L">
+                <value name="DELAY_TIME_MILI">
+                  <block type="math_number" id="}dgxti=HL~5*LOCmQh)=">
+                    <field name="NUM">5</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

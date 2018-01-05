@@ -1,0 +1,185 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="DCGZ;?T%4+bm92-n@G=:" x="68" y="34">
+    <field name="VAR">valPot</field>
+    <value name="VALUE">
+      <block type="io_analogread" id="{3m0k87Q1L}JXz@q*z(Q">
+        <field name="PIN">A0</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="a!U#*WlVI*QM4zE|xClE">
+        <field name="VAR">valNormal</field>
+        <value name="VALUE">
+          <block type="base_map" id="#n+:JqT}W~2r0uj}3QOA">
+            <value name="NUM">
+              <block type="variables_get" id="}rEp3T41y)G=?F(+R8X7">
+                <field name="VAR">valPot</field>
+              </block>
+            </value>
+            <value name="DMAX">
+              <block type="math_number" id=";GY;GiR_(=EAV3tLH`:=">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if_else2" id="X2cLH?8X!Ak:fC:9!A8A">
+            <value name="if_label">
+              <block type="logic_compare" id="3q*6F[ihh`/1ZVQrE~)r">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="~nt:QbfryAP)6%[/?*`-">
+                    <field name="VAR">valNormal</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="`=P5*e}DK[tcOCqEZdRI">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="if">
+              <block type="io_digitalwrite" id="e{0A]_Zh.+SErb/nw`5C">
+                <field name="PIN">13</field>
+                <value name="STATE">
+                  <block type="io_highlow" id="AlOTgW:23j/(xTV;Q032">
+                    <field name="STATE">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="io_digitalwrite" id="]dnM1Wi?_ra`[W.HdQ:G">
+                    <field name="PIN">12</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id="~C*SEvqhp`-DP:BYH~w]">
+                        <field name="STATE">LOW</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="else">
+              <block type="controls_if" id="4}fD775j%H[^[uRi.a^,">
+                <value name="IF0">
+                  <block type="logic_compare" id="Uz.i@tv*_[s~[9~^P]0U">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="variables_get" id="%mK?8nyMr5n-.mmn:eC6">
+                        <field name="VAR">valNormal</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id=".PZUUoncD@t-pr2#f29F">
+                        <field name="NUM">50</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="io_digitalwrite" id="G]Mi.LxUiil~X8EEDie1">
+                    <field name="PIN">13</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id=".*4YF}%bEB9*?,H|5%)_">
+                        <field name="STATE">HIGH</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="io_digitalwrite" id="@%+C]rThWcd.FVnUe`Oa">
+                        <field name="PIN">12</field>
+                        <value name="STATE">
+                          <block type="io_highlow" id="1b13PH@trBuDWM0aN%FO">
+                            <field name="STATE">LOW</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="V@TF72=/slD:..d`S{r)">
+                    <value name="IF0">
+                      <block type="logic_compare" id="R:-wF9!Jub/Fsh6)Whds">
+                        <field name="OP">GTE</field>
+                        <value name="A">
+                          <block type="variables_get" id="hZdfZ`do0d!9XEN^P7|.">
+                            <field name="VAR">valNormal</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="Wqr0g2i;@FMsD#DO+KLL">
+                            <field name="NUM">50</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="io_digitalwrite" id="=t|AJ8eJL,QmWXcZ5=J8">
+                        <field name="PIN">13</field>
+                        <value name="STATE">
+                          <block type="io_highlow" id="8JUMHC@5ct[|Q^~N#C+!">
+                            <field name="STATE">LOW</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="io_digitalwrite" id="owZJ|r{(yr?T1Oec,0t2">
+                            <field name="PIN">12</field>
+                            <value name="STATE">
+                              <block type="io_highlow" id="0xrN)S9Xddjm5?T,;W/}">
+                                <field name="STATE">HIGH</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id="hq;03^-zaofvdddTmXlb">
+                        <value name="IF0">
+                          <block type="logic_compare" id="-+3/S0ZAZP=fW{koQ#+P">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="?a(X2S86UgpV(^s-IT)?">
+                                <field name="VAR">valNormal</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="v[C0BV-EG7j3:;(er/)C">
+                                <field name="NUM">99</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="io_digitalwrite" id="EecA44A7wmcGM-dEhx%N">
+                            <field name="PIN">13</field>
+                            <value name="STATE">
+                              <block type="io_highlow" id="/w60+FLHp|Y[[DBw2#H7">
+                                <field name="STATE">HIGH</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="io_digitalwrite" id="z:=Wq1w7xXE6PPf|Xh(y">
+                                <field name="PIN">12</field>
+                                <value name="STATE">
+                                  <block type="io_highlow" id="g?k%9a%xg#hY1QP9I^`m">
+                                    <field name="STATE">HIGH</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
