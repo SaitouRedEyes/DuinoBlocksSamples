@@ -1,0 +1,170 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defnoreturn" id="y:GtqzZFo86wdR}ushhz" x="53" y="21">
+    <mutation>
+      <arg name="s1"></arg>
+      <arg name="s2"></arg>
+    </mutation>
+    <field name="NAME">EscolheLED</field>
+    <comment pinned="false" h="80" w="160">Descreva esta função...</comment>
+    <statement name="STACK">
+      <block type="io_digitalwrite" id="H^tI]L.9CAUpaiKe4IT7">
+        <field name="PIN">13</field>
+        <value name="STATE">
+          <block type="variables_get" id="~ucBe.V!X;i)gv[v_]Rf">
+            <field name="VAR">s1</field>
+          </block>
+        </value>
+        <next>
+          <block type="io_digitalwrite" id="xKtI!O[q6AlJzHfOlL5m">
+            <field name="PIN">12</field>
+            <value name="STATE">
+              <block type="variables_get" id="KV`KYku:`;Kf=y;A@sBT">
+                <field name="VAR">s2</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_functions" id="H_@-SKX~[e2%,pz0PBTv" x="55" y="151">
+    <statement name="SETUP_FUNC">
+      <block type="instantiate_variable" id=".{^4SapRuS|/al#Ox-Fm">
+        <field name="VAR">s1</field>
+        <value name="VALUE">
+          <block type="logic_boolean" id="UdOP#S/1%=mITctW)qzR">
+            <field name="BOOL">FALSE</field>
+          </block>
+        </value>
+        <next>
+          <block type="instantiate_variable" id="9`Os79{51tqq9!zK1{(~">
+            <field name="VAR">s2</field>
+            <value name="VALUE">
+              <block type="logic_boolean" id="zv(cF1k5LGG^;I0R7}jw">
+                <field name="BOOL">FALSE</field>
+              </block>
+            </value>
+            <next>
+              <block type="instantiate_variable" id="@?9_]s*o,#u%0UDlRPkN">
+                <field name="VAR">letra</field>
+                <value name="VALUE">
+                  <block type="text" id="-7`]vOTo-x56%*4{y9(z">
+                    <field name="TEXT"></field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="variables_set" id="W6VS,BcdyIfg_cEF4P@X">
+        <field name="VAR">letra</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="I?|y?iY[cf4A4fX(|h8z">
+            <mutation type="Text"></mutation>
+            <field name="TYPE">Text</field>
+            <value name="TEXT">
+              <block type="text" id="~u4v|!a53R6TZ(Zp|VvY">
+                <field name="TEXT">Digite 'a' para azul ou 'v' para verde:</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if_else2" id=";BX0E`j=LZK_3mZD~ek}">
+            <value name="if_label">
+              <block type="logic_compare" id="gPitY8.8cJhES!vI*+}=">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id=";c^Koekm?.oqCk/N-?~3">
+                    <field name="VAR">letra</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="QMv-!!}-:cT?`J%`A,u`">
+                    <field name="TEXT">a</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="if">
+              <block type="procedures_callnoreturn" id="v+7xk8=s1_me+f;jb!z`">
+                <mutation name="EscolheLED">
+                  <arg name="s1"></arg>
+                  <arg name="s2"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="logic_boolean" id="rJ.FDovJaT*eH56HPaLv">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="logic_boolean" id="?D0qVdD|bHj0F#Tf=FuD">
+                    <field name="BOOL">FALSE</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <statement name="else">
+              <block type="controls_if_else2" id="kiwAc6uRy;kut#E{OxF4">
+                <value name="if_label">
+                  <block type="logic_compare" id="lg)`Z@oF!ABpA`Lhh@4u">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="ZdFj,SVOU_gs5u]GUIyV">
+                        <field name="VAR">letra</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="text" id="{lP*XSDJ?/;2=]GD-TKr">
+                        <field name="TEXT">v</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="if">
+                  <block type="procedures_callnoreturn" id="6/[1BU@jD]IhwW(8;QRt">
+                    <mutation name="EscolheLED">
+                      <arg name="s1"></arg>
+                      <arg name="s2"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="logic_boolean" id="p(dF/XQ5mM6+e8;cq^24">
+                        <field name="BOOL">FALSE</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="logic_boolean" id=",2a]Sl?]FQ4)CgDnUpH1">
+                        <field name="BOOL">TRUE</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <statement name="else">
+                  <block type="procedures_callnoreturn" id="ylSWe[Qf{EXxJ/;kH*yr">
+                    <mutation name="EscolheLED">
+                      <arg name="s1"></arg>
+                      <arg name="s2"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="logic_boolean" id="fIKg{Ta-dOY-vT]0#@%~">
+                        <field name="BOOL">FALSE</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="logic_boolean" id="1aWe!IE=nv5ihZ,jtiuL">
+                        <field name="BOOL">FALSE</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

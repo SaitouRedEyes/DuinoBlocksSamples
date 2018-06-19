@@ -1,0 +1,170 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id=",1PM}pwbQC4;Qw!^XAw]" x="129" y="24">
+    <statement name="SETUP_FUNC">
+      <block type="instantiate_variable" id="Q5J/oBs0#%%]XAeJCO?Y">
+        <field name="VAR">qualComponente</field>
+        <value name="VALUE">
+          <block type="math_number" id="ok^m*;5|E}d.9/[8.}GL">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <next>
+          <block type="instantiate_variable" id="QUPW:=PMEM_I4M7h|Hzf">
+            <field name="VAR">estadoBotao</field>
+            <value name="VALUE">
+              <block type="math_number" id="M;+hF.UbM@Wa2Vqukb{-">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="variables_set" id="IQk(vVci`V!;R:ZbH0eq">
+        <field name="VAR">estadoBotao</field>
+        <value name="VALUE">
+          <block type="procedures_button_state" id="J![;rmTp_Q%haRe4p;D3">
+            <field name="PIN">2</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if_else2" id="So|F?pJ9dqkuAq/n_n][">
+            <value name="if_label">
+              <block type="logic_compare" id="ax79yqJk/(Jbgl8eq=7m">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="faXh_9^%o#;#tTpA]5Yd">
+                    <field name="VAR">estadoBotao</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="Rkat?q#b*MsBhFDvFe5J">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="if">
+              <block type="controls_if_else2" id=":2hy;hnO[[!s,2[f~ngd">
+                <value name="if_label">
+                  <block type="logic_compare" id="rd7_cr5]f,Rh~_`+7[uX">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="D28Cdu]D!*={h{1rrZbr">
+                        <field name="VAR">qualComponente</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="2?dkN7mU}[#6j=Y,MEEb">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="if">
+                  <block type="io_digitalwrite" id="ry,T%3(=fk`W2zfC*aU.">
+                    <field name="PIN">13</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id=";x*(a*_(,{(ic)TSoO8H">
+                        <field name="STATE">HIGH</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <statement name="else">
+                  <block type="io_digitalwrite" id="KV1NR6Q/B)M4f/8DWL;V">
+                    <field name="PIN">12</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id=";V;[*pC?K@NcCbj5Odd{">
+                        <field name="STATE">HIGH</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <statement name="else">
+              <block type="controls_if" id="bH26JCguq+B/ij,=5~s6">
+                <value name="IF0">
+                  <block type="logic_compare" id="=/IcG2-/^!InnCVr*Xdu">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="-`.X97|X,ymS_`i;5Uk]">
+                        <field name="VAR">estadoBotao</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="5mYjvyUynfy@%sH!+lfY">
+                        <field name="NUM">2</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="math_change" id="@9)kti6|KxP-l/Y0d-eG">
+                    <field name="VAR">qualComponente</field>
+                    <value name="DELTA">
+                      <block type="math_number" id="NG`HhY+F)TLB|a5Kogaa">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="io_digitalwrite" id="*gjDh+3e(?5H=(P2WmXr">
+                        <field name="PIN">13</field>
+                        <value name="STATE">
+                          <block type="io_highlow" id="+WZY]WTs5Fn,U#|{A|u=">
+                            <field name="STATE">LOW</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="io_digitalwrite" id="b?ty;,)D@_!CkJja|E++">
+                            <field name="PIN">12</field>
+                            <value name="STATE">
+                              <block type="io_highlow" id="3,)lQq|w=1IF?UKC{eIY">
+                                <field name="STATE">LOW</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_if" id="p[l]xT^|qL{G5_Ko#I={">
+                                <value name="IF0">
+                                  <block type="logic_compare" id="oEwz9!z5nSs9lJ(JJq=g">
+                                    <field name="OP">GT</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="}=`G*#+=kD|Z*skO|db3">
+                                        <field name="VAR">qualComponente</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id=".Fo;]8v/1rO3-NG;Sk^Z">
+                                        <field name="NUM">2</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="variables_set" id="@eVv#u!daHtMMPKJ}4zj">
+                                    <field name="VAR">qualComponente</field>
+                                    <value name="VALUE">
+                                      <block type="math_number" id="xnuaQ:OsmE(3=CrdQFZ!">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,251 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="Zp;7%(o}ibM1yjX/RqqF" x="43" y="10">
+    <statement name="SETUP_FUNC">
+      <block type="instantiate_variable" id="N0I*)TVv%9=u8{N|ky/3">
+        <field name="VAR">ledsAcesos</field>
+        <value name="VALUE">
+          <block type="math_number" id="mXv}0{H(iZ{GQnAJ:vng">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="instantiate_variable" id="b=;[{=bBsr}=syYD#.]p">
+            <field name="VAR">tentativas</field>
+            <value name="VALUE">
+              <block type="math_number" id="+vlx!j670-!3)e%u3p#T">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="instantiate_variable" id="1K!5SS.)KYo~kA2.d%:~">
+                <field name="VAR">numErros</field>
+                <value name="VALUE">
+                  <block type="math_number" id="Ls{fH3Nt}H73x|ew@}85">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="instantiate_variable" id="lGBnt%.?KiW:;du8mv1r">
+                    <field name="VAR">aleatorio</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="G/is%p.%@h:jTt9DTuMK">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="controls_whileUntil" id="+RO/rUY;zhcyy*_Ls?X7">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_compare" id="@|mVu#Y[;1?bV:Jv]~F.">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="variables_get" id="5~Plu=)0JVrd]No%X1Z^">
+                <field name="VAR">ledsAcesos</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="*L!07{j]Ph^CP=z^){YE">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="time_delay" id="bB71p`%*zMHB[G}Uf5SQ">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id="FKHZA:IiU}}9GfSO?J;+">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+            <next>
+              <block type="math_change" id="wKI8q[HK)PJ1HPj_/iU5">
+                <field name="VAR">tentativas</field>
+                <value name="DELTA">
+                  <block type="math_number" id="?iG:gi*XhGD*T^xxIw`!">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="Ga}rNC[Odpr-k;oeY(o)">
+                    <field name="VAR">aleatorio</field>
+                    <value name="VALUE">
+                      <block type="math_random_int" id="{5BT?|yABHHpR%3kj(*v">
+                        <value name="FROM">
+                          <block type="math_number" id="jaA5PNp}h`h|4*s_9|+L">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="math_number" id="o#7?plPPu]E/ZaMYI:f%">
+                            <field name="NUM">50</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if_else2" id="[2yoOO+n9SK.KP#Ej1c*">
+                        <value name="if_label">
+                          <block type="logic_compare" id="Y@2T0p^=?9nuv}y7Su2O">
+                            <field name="OP">LT</field>
+                            <value name="A">
+                              <block type="variables_get" id="d_:5MNoC6=l.z{xL#~_)">
+                                <field name="VAR">aleatorio</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="Q/yo-),6G~?d`%O%L,-[">
+                                <field name="NUM">25</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="if">
+                          <block type="controls_if_else2" id="RJVs-[?w@Ukz14nez-:C">
+                            <value name="if_label">
+                              <block type="logic_compare" id=";k(]qYP*Rc6MF-aAj;gB">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="e:QiM`2UxP,r_J8N@CJN">
+                                    <field name="VAR">ledsAcesos</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="]uLfA;r/U@sELY)lrBm]">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="if">
+                              <block type="math_change" id="P}:!TFL:Z1yNi4L:Fza1">
+                                <field name="VAR">ledsAcesos</field>
+                                <value name="DELTA">
+                                  <block type="math_number" id="6E9LTP0O_S!nCi@K7PMZ">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="io_digitalwrite" id="dRgDIMMAx;:oQfeB/vA/">
+                                    <field name="PIN">13</field>
+                                    <value name="STATE">
+                                      <block type="io_highlow" id="o(-ph!RMEPT]N0_[[dNw">
+                                        <field name="STATE">HIGH</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <statement name="else">
+                              <block type="math_change" id="~sUZI(SG^0UzeAYSJ/9N">
+                                <field name="VAR">ledsAcesos</field>
+                                <value name="DELTA">
+                                  <block type="math_number" id="z%3!ZA*W=egWYlVd2dme">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="io_digitalwrite" id="ZjO2M2j}OX8jjas3#;!s">
+                                    <field name="PIN">12</field>
+                                    <value name="STATE">
+                                      <block type="io_highlow" id="gL1*mq!ItSJ*To:%o/yn">
+                                        <field name="STATE">HIGH</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="serial_print" id="7BKJ+W*efS84k-mVz{o^">
+                                        <field name="SERIAL_ID">Serial</field>
+                                        <field name="NEW_LINE">TRUE</field>
+                                        <value name="CONTENT">
+                                          <block type="variables_get" id="F|n#LdITY_#3U+`#E]Cn">
+                                            <field name="VAR">tentativas</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="serial_print" id="m@^kbTvdzj}!8?4KRsF)">
+                                            <field name="SERIAL_ID">Serial</field>
+                                            <field name="NEW_LINE">TRUE</field>
+                                            <value name="CONTENT">
+                                              <block type="variables_get" id="TydWk+arRrHP(.akS8MN">
+                                                <field name="VAR">numErros</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </statement>
+                        <statement name="else">
+                          <block type="math_change" id="wO]wg,t}+#EHm;qwP!Vc">
+                            <field name="VAR">numErros</field>
+                            <value name="DELTA">
+                              <block type="math_number" id="+?E.d@-wd=K|ko|[w1}Q">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_if" id="BtbR]9%Ki(cXVkQEcmvD">
+                                <value name="IF0">
+                                  <block type="logic_compare" id="]/LIVD/}xX=[M_WJ;IT/">
+                                    <field name="OP">EQ</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="Cz1g:E{60]{qF4x6qPU9">
+                                        <field name="VAR">ledsAcesos</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="WkRl4)D+Jh)vluzt~!,d">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="math_change" id="YGk3/g}u.PGA+b.he{^]">
+                                    <field name="VAR">ledsAcesos</field>
+                                    <value name="DELTA">
+                                      <block type="math_number" id="ZJUB2,aJ2I2Xd64-*Qi%">
+                                        <field name="NUM">-1</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="io_digitalwrite" id="?tw@nZD1Z*3YTdwTndis">
+                                        <field name="PIN">13</field>
+                                        <value name="STATE">
+                                          <block type="io_highlow" id="7n*.H9*Y)6+CwD{8,k!l">
+                                            <field name="STATE">LOW</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

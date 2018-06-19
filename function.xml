@@ -1,0 +1,198 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defnoreturn" id="YmyV.orlUyt]#^X%kdY|" x="123" y="116">
+    <mutation>
+      <arg name="tempoAceso"></arg>
+      <arg name="tempoApagado"></arg>
+    </mutation>
+    <field name="NAME">Pisca</field>
+    <comment pinned="false" h="80" w="160">Descreva esta função...</comment>
+    <statement name="STACK">
+      <block type="io_digitalwrite" id="gJ}w@SGU7ue#MmxQ%k6Y">
+        <field name="PIN">13</field>
+        <value name="STATE">
+          <block type="io_highlow" id="%dQL;yTQB|h!e3)SGAU/">
+            <field name="STATE">HIGH</field>
+          </block>
+        </value>
+        <next>
+          <block type="time_delay" id="UtPnzlf,mq0;lKdX;P^.">
+            <value name="DELAY_TIME_MILI">
+              <block type="variables_get" id="COLZdJ%51Vh-K%`~)W}-">
+                <field name="VAR">tempoAceso</field>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id="ac,~klJ*Qiv/#z#CW~#O">
+                <field name="PIN">13</field>
+                <value name="STATE">
+                  <block type="io_highlow" id="@WII#N|Dxn#[GGzV,iLX">
+                    <field name="STATE">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="time_delay" id="CMbv.ue+Q.Kvd3UE.M9p">
+                    <value name="DELAY_TIME_MILI">
+                      <block type="variables_get" id="-O5Q.=J.!,xX8gTBQF((">
+                        <field name="VAR">tempoApagado</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id="{U]H;sQ;To-c7,#leP!C" x="127" y="317">
+    <mutation>
+      <arg name="n1"></arg>
+      <arg name="n2"></arg>
+    </mutation>
+    <field name="NAME">Soma</field>
+    <comment pinned="false" h="80" w="160">Descreva esta função...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="mGhux2kU,5h/Y.-C2/.^">
+        <field name="VAR">resultado</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="_H}/3,a6JFC;Rww!XYSw">
+            <field name="OP">ADD</field>
+            <value name="A">
+              <block type="variables_get" id="M|_Ag5`ioC#d6j83n%3d">
+                <field name="VAR">n1</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="variables_get" id="SwgkwB50d#vxr3*s/u-l">
+                <field name="VAR">n2</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_set_type" id="P.7{7ft5Yq0JUg}578l-">
+        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+        <value name="VARIABLE_SETTYPE_INPUT">
+          <block type="variables_get" id="jA@C5hQ4?)|dva9Z7(-g">
+            <field name="VAR">resultado</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="arduino_functions" id="zf-a?:JQV7)WCwQ4L+5." x="129" y="541">
+    <statement name="SETUP_FUNC">
+      <block type="instantiate_variable" id="sQInnVvKemPAUU`_?2M=">
+        <field name="VAR">tempoAceso</field>
+        <value name="VALUE">
+          <block type="math_number" id="/}1Y5c^+0Y~r[/;ybDC(">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="instantiate_variable" id="Op%WwF##q9zMt1s+*Hn?">
+            <field name="VAR">tempoApagado</field>
+            <value name="VALUE">
+              <block type="math_number" id="7Xy?gVA*=wHGZloZ[*D}">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="instantiate_variable" id="f;kW*de-C0s[O/#Q0,AF">
+                <field name="VAR">n1</field>
+                <value name="VALUE">
+                  <block type="math_number" id="ijmN,M8C*BuDlfqXeywr">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="instantiate_variable" id="cLEuv0)9t_jT5[0y)vh5">
+                    <field name="VAR">n2</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="/|8zD^3W?#LA|+PF=FP]">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="instantiate_variable" id="nybiLiLOn8dj}|2_5#aS">
+                        <field name="VAR">resultado</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="jx=e=Rh.+#|kcxQZvn(*">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="procedures_callnoreturn" id="L}5M0g[-dRlEDI]h_]5?">
+        <mutation name="Pisca">
+          <arg name="tempoAceso"></arg>
+          <arg name="tempoApagado"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="math_random_int" id="yc]`-|,I[nK-1Kd99rGy">
+            <value name="FROM">
+              <block type="math_number" id="tb{}9B[o?L^3U09D|y)H">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number" id="Hj8]=.ktXyh]{iiH}2MN">
+                <field name="NUM">5000</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="ARG1">
+          <block type="math_random_int" id="ZgA@,1KP8ez*KX|z*3Hv">
+            <value name="FROM">
+              <block type="math_number" id="MJWJch~ugSqNiQFt85hC">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number" id="bd9a;8~ohnJloBoB!{Iw">
+                <field name="NUM">3000</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="serial_print" id="y^zP|e4}526J5o:,aOnq">
+            <field name="SERIAL_ID">Serial</field>
+            <field name="NEW_LINE">TRUE</field>
+            <value name="CONTENT">
+              <block type="procedures_callreturn" id="C2NPm!L,kT%Ls),?Q/^;">
+                <mutation name="Soma">
+                  <arg name="n1"></arg>
+                  <arg name="n2"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="math_number" id="ypLKo}gqCCY:d(uR{0Ou">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_number" id="VZ)_-]Fu-LL,S/AC+uyd">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

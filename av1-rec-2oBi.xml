@@ -1,0 +1,134 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="`l6SoftTn:XdoA6|vJ~=" x="104" y="39">
+    <statement name="SETUP_FUNC">
+      <block type="instantiate_variable" id="UpbV9nu{=h=!~}cq[`Tw">
+        <field name="VAR">vida</field>
+        <value name="VALUE">
+          <block type="math_number" id="wbk5L]({~7;h|H{]gGJ?">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <next>
+          <block type="instantiate_variable" id="cmc!|8R3j7B!vCK0_e;M">
+            <field name="VAR">aleatorio</field>
+            <value name="VALUE">
+              <block type="math_number" id="=Wj.``C)zhI_ayVy-Wtb">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="controls_whileUntil" id="c-n{-kOf^Oh^-AA3W0)x">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_compare" id="Tf#G:GMzml)Yfu_|CIx[">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="variables_get" id="n~Chvk-}ixH]H!q^cbjC">
+                <field name="VAR">vida</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="q=!R*I^9L?f7]CJBT;F}">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="variables_set" id="RQ^nISE4B!K5=sUDLM,+">
+            <field name="VAR">aleatorio</field>
+            <value name="VALUE">
+              <block type="math_random_int" id="f(7n0*e9kZf4M):`kv-=">
+                <value name="FROM">
+                  <block type="math_number" id="R|26*=Ek%Hhm0GwH-Gwj">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="TO">
+                  <block type="math_number" id="FuKab#F/!H#mQi~_+8e-">
+                    <field name="NUM">20</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if_else2" id="a/KA/n?1-%8kY?~KJ!r2">
+                <value name="if_label">
+                  <block type="logic_compare" id="P|.ytish:6bG/mInvPGQ">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="variables_get" id="[]@[c;GWnESuJt.6[^,Z">
+                        <field name="VAR">aleatorio</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="Hx0Eb(quJE;k;xVl@~YL">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="if">
+                  <block type="variables_set" id="kow-8rm3Dw;;_srfV6%H">
+                    <field name="VAR">vida</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="!3H]7M0{BJ3^:{`Pvi/w">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <block type="variables_get" id="W/[]M`f?_7,No4B_e,?R">
+                            <field name="VAR">vida</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="iWj2ZuJ.P:~XN7lsfI%t">
+                            <field name="VAR">aleatorio</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <statement name="else">
+                  <block type="variables_set" id="L{4;Ar@j1`WGKwYb0R|E">
+                    <field name="VAR">vida</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="szD0m%[F{l|h%tZ4w%7f">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="serial_print" id="]B+Zi-/Ml{c=TX%eLpDZ">
+                    <field name="SERIAL_ID">Serial</field>
+                    <field name="NEW_LINE">TRUE</field>
+                    <value name="CONTENT">
+                      <block type="variables_get" id="{vhQHNL5qa:|yWYmoA[w">
+                        <field name="VAR">aleatorio</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_print" id="C#1I0LFdX#95U32+{N4_">
+                        <field name="SERIAL_ID">Serial</field>
+                        <field name="NEW_LINE">TRUE</field>
+                        <value name="CONTENT">
+                          <block type="variables_get" id="tQi]=3b%q8jOpxF@ZdT4">
+                            <field name="VAR">vida</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
